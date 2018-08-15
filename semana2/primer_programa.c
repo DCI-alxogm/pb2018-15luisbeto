@@ -21,6 +21,6 @@ int main()
     incremento = a-i;
     edadact = edad-incremento;
     
-    printf("%s tu edad en 2028 es : %d",n,edadact);
+    printf("%s tu edad en 2028 es : %d\n ",n,edadact);
     return 0;
 } 
