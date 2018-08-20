@@ -11,13 +11,8 @@ int main()
 	scanf("%d%d%d",&x,&y,&z);
 	
 	r= sqrt((x*x)+(y*y)+(z*z));
-	o= acos(z/x);
+	o=acos(z/x);
 	p= atan(y/x);
-	printf("las coordenadas esfericas son: %f, %f, %f\n",r,o,p);
-	
-	x=r*sin(o)*cos(p);
-	y=r*sin(o)*sin(p);
-	z=r*cos(o);
-	printf("las coordenadas cartesianas son: %d, %d, %d",x,y,z);
+	printf("las coordenadas esfericas en radianes son: %f, %f, %f\n",r,o,p);
 }
 
