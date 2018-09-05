@@ -6,9 +6,9 @@ int i;
 
 int main()
 {
-	printf("incerta temperatura inicial");
+	printf("inserta temperatura inicial");
 	scanf("%f",&Tem_C);
-	printf("\nincerta temoeratura final");
+	printf("\ninserta temperatura final");
 	scanf("%f",&final);
 	printf("\ninsertar el espaciador que desea");	
 	scanf("%f",&n);
