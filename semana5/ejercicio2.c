@@ -15,7 +15,7 @@ for(j=0;j<x;j++)
 printf("\n%d.- %d",c,res);
 c=c+1;
 }
-printf("\nSi quieres probar con otro numero escribe un 1\n Si quieres salir escribe cualquier utro numero");
+printf("\nSi quieres probar con otro numero escribe un 1\nSi quieres salir escribe cualquier utro numero");
 scanf("%d",&i);
 }
 }
