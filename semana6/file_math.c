@@ -7,8 +7,8 @@ FILE*data;
 FILE*archivo;
 int final,i,n;
 float e,c,s,l,raiz,delta,x;
-
 data = fopen("intervalos.txt", "r");
+archivo = fopen("resultadosmat.txt", "w");
 printf("incerta una variable");
 scanf("%f",&x);
 printf("incerta un intervalo");
@@ -16,8 +16,6 @@ scanf("%d",&final);
 printf("incerta el numero de veces que se repite");
 scanf("%d",&n);
 fclose(data);
-
-archivo = fopen("resultadosmat.txt", "w");
 delta=(final)/n;
 for(i=0;i<n;i++)
 {
