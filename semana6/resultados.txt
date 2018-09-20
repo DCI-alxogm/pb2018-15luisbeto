@@ -1,13 +1,13 @@
 
-Se capturaron 10,de los cuales 5 son mujeres y 5 son hombres, la edad promedio es 20.400000
+Se capturaron 10,de los cuales 5 son mujeres y 5 son hombres, la edad promedio es 19.299999
 EL numero de estudiantes por semestre es:
-Primero = 3
-Seundo = 1
+Primero = 4
+Seundo = 2
 Tercero = 2
-Cuarto = 2
-Quinto = 1
+Cuarto = 1
+Quinto = 0
 Sexto = 1
 Septimo = 0
 Octavo = 0
 Noveno = 0
-El promedio de calificacion de los estudiantes es= 8.540000)
+El promedio de calificacion de los estudiantes es= 7.650001)
