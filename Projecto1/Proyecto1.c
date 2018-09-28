@@ -2,8 +2,8 @@
 #include<math.h>
 
 int main(){
-	int M,i,a[9],j,w;
-	float h,G,te[9];
+	int M,i,a[9],w;
+	float h,G,j,te[9];
 	double x[9], y[9], z[9], vx[9], vy[9], vz[9], vxi[9], vyi[9], vzi[9], r[9];
 
 	FILE *data;
@@ -23,16 +23,15 @@ int main(){
 	r[i]=(pow(x[i],2)+pow(y[i],2),pow(z[i],2));
 	r[i]=sqrt(r[i]);
 
-	a[i];(te[i]/h)*350;
+	a[i];(te[i]/h);
 	}
 	fclose(data);
 
 
 	FILE *mer;
 	mer=fopen("Mercurio.txt","w");
-	for(j=0;j<=a[0];j++){
-
 	fprintf(mer,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[0],y[0],z[0],vx[0],vy[0],vy[0]);
+	for(j=0;j<=a[0];j++){
 
 		vxi[0] = vx[0] - h*((G*M*x[0])/pow(r[0],3));
 		vyi[0] = vy[0] - h*((G*M*y[0])/pow(r[0],3));
@@ -48,16 +47,16 @@ int main(){
 
 	r[0] = (pow(x[0],2)+pow(y[0],2),pow(z[0],2));
 	r[0] = sqrt(r[0]);
+	fprintf(mer,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[0],y[0],z[0],vx[0],vy[0],vy[0]);
 }
 fclose(mer);
 
 
 	FILE *ven;
 	ven=fopen("Venus.txt","w");
+	fprintf(ven,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[1],y[1],z[1],vx[1],vy[1],vy[1]);
 	for(j=0;j<=a[1];j++){
 		
-	fprintf(ven,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[1],y[1],z[1],vx[1],vy[1],vy[1]);
-
 		vxi[1] = vx[1] - h*((G*M*x[1])/pow(r[1],3));
 		vyi[1] = vy[1] - h*((G*M*y[1])/pow(r[1],3));
 		vzi[1] = vz[1] - h*((G*M*z[1])/pow(r[1],3));
@@ -72,18 +71,18 @@ fclose(mer);
 
 	r[1] = (pow(x[1],2)+pow(y[1],2),pow(z[1],2));
 	r[1] = sqrt(r[1]);
+	fprintf(ven,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[1],y[1],z[1],vx[1],vy[1],vy[1]);
+
 }
 fclose(ven);
 
 
 	FILE *tie;
 	tie=fopen("Tierra.txt","w");
+	fprintf(tie,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[2],y[2],z[2],vx[2],vy[2],vy[2]);
 	w=0;
 	for(j=0;j<=a[2];j++){
-	if(w==0){
-	fprintf(tie,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[2],y[2],z[2],vx[2],vy[2],vy[2]);
-w=1;
-}
+
 		vxi[2] = vx[2] - h*((G*M*x[2])/pow(r[2],3));
 		vyi[2] = vy[2] - h*((G*M*y[2])/pow(r[2],3));
 		vzi[2] = vz[2] - h*((G*M*z[2])/pow(r[2],3));
@@ -97,7 +96,11 @@ w=1;
 	vz[2] = vzi[2];
 
 	r[2] = (pow(x[2],2)+pow(y[2],2),pow(z[2],2));
-	r[1] = sqrt(r[2]);
+	r[1] = sqrt(r[2]);	
+if(w==0){
+	fprintf(tie,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[2],y[2],z[2],vx[2],vy[2],vy[2]);
+w=1;
+}
 w--;
 }
 fclose(tie);
