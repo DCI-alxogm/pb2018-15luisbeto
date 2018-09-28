@@ -2,8 +2,8 @@
 #include<math.h>
 
 int main(){
-	int M,i,a[9],w;
-	float h,G,j,te[9];
+	int M,i,a[9],w=0;
+	float h,G,j;
 	double x[9], y[9], z[9], vx[9], vy[9], vz[9], vxi[9], vyi[9], vzi[9], r[9];
 
 	FILE *data;
@@ -11,7 +11,7 @@ int main(){
 	fscanf(data,"%f %d %f",&h,&M,&G); 
 //parametros de incremento
 	for(i=0;i<9;i++){
-	fscanf(data,"%f",&te[i]);	
+	fscanf(data,"%d",&a[i]);	
 	fscanf(data,"%lf %lf %lf %lf %lf %lf",&x[i],&y[i],&z[i],&vx[i],&vy[i],&vz[i],&vxi[i]); 
 
 //variables de la velosidad
@@ -23,7 +23,6 @@ int main(){
 	r[i]=(pow(x[i],2)+pow(y[i],2),pow(z[i],2));
 	r[i]=sqrt(r[i]);
 
-	a[i];(te[i]/h);
 	}
 	fclose(data);
 
@@ -32,18 +31,14 @@ int main(){
 	mer=fopen("Mercurio.txt","w");
 	fprintf(mer,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[0],y[0],z[0],vx[0],vy[0],vy[0]);
 	for(j=0;j<=a[0];j++){
-
-		vxi[0] = vx[0] - h*((G*M*x[0])/pow(r[0],3));
-		vyi[0] = vy[0] - h*((G*M*y[0])/pow(r[0],3));
-		vzi[0] = vz[0] - h*((G*M*z[0])/pow(r[0],3));
 		
 		x[0] = x[0] + (vx[0]*h);//coordenada de x en un lapso de tiempo despues de h segundos
 		y[0] = y[0] + (vy[0]*h);//coordenada de y en un lapso de tiempo despues de h segundos
 		z[0] = z[0] + (vz[0]*h);//coordenada de z en un lapso de tiempo despues de h segundos
-	
-	vx[0] = vxi[0];
-	vy[0] = vyi[0];
-	vz[0] = vzi[0];
+		vxi[0] = vx[0] - h*((G*M*x[0])/pow(r[0],3));
+		vyi[0] = vy[0] - h*((G*M*y[0])/pow(r[0],3));
+		vzi[0] = vz[0] - h*((G*M*z[0])/pow(r[0],3));
+
 
 	r[0] = (pow(x[0],2)+pow(y[0],2),pow(z[0],2));
 	r[0] = sqrt(r[0]);
@@ -99,7 +94,7 @@ fclose(ven);
 	r[1] = sqrt(r[2]);	
 if(w==0){
 	fprintf(tie,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[2],y[2],z[2],vx[2],vy[2],vy[2]);
-w=1;
+w=2;
 }
 w--;
 }
@@ -112,7 +107,7 @@ fclose(tie);
 	for(j=0;j<=a[3];j++){
 	if(w==0){		
 	fprintf(mar,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[3],y[3],z[3],vx[3],vy[3],vy[3]);
-w=3;
+w=4;
 }
 		vxi[3] = vx[3] - h*((G*M*x[3])/pow(r[3],3));
 		vyi[3] = vy[3] - h*((G*M*y[3])/pow(r[3],3));
@@ -139,7 +134,7 @@ fclose(mar);
 	for(j=0;j<=a[4];j++){
 	if(w==0){		
 	fprintf(jup,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[4],y[4],z[4],vx[4],vy[4],vy[4]);
-w=23;
+w=24;
 }
 		vxi[4] = vx[4] - h*((G*M*x[4])/pow(r[4],3));
 		vyi[4] = vy[4] - h*((G*M*y[4])/pow(r[4],3));
@@ -166,7 +161,7 @@ fclose(jup);
 	for(j=0;j<=a[5];j++){
 	if(w==0){		
 	fprintf(sat,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[5],y[5],z[5],vx[5],vy[5],vy[5]);
-w=57;
+w=58;
 }
 		vxi[5] = vx[5] - h*((G*M*x[5])/pow(r[5],3));
 		vyi[5] = vy[5] - h*((G*M*y[5])/pow(r[5],3));
@@ -193,7 +188,7 @@ fclose(sat);
 	for(j=0;j<=a[6];j++){
 	if(w==0){	
 	fprintf(ura,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[6],y[6],z[6],vx[6],vy[6],vy[6]);
-w=167;
+w=168;
 }
 		vxi[6] = vx[6] - h*((G*M*x[6])/pow(r[6],3));
 		vyi[6] = vy[6] - h*((G*M*y[6])/pow(r[6],3));
@@ -220,7 +215,7 @@ fclose(ura);
 	for(j=0;j<=a[7];j++){
 	if(w==0){	
 	fprintf(nep,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[7],y[7],z[7],vx[7],vy[7],vy[7]);
-w=329;
+w=330;
 }
 		vxi[7] = vx[7] - h*((G*M*x[7])/pow(r[7],3));
 		vyi[7] = vy[7] - h*((G*M*y[7])/pow(r[7],3));
@@ -247,7 +242,7 @@ fclose(nep);
 	for(j=0;j<=a[8];j++){
 	if(w==0){	
 	fprintf(plu,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[8],y[8],z[8],vx[8],vy[8],vy[8]);
-w=495;
+w=496;
 }
 		vxi[8] = vx[8] - h*((G*M*x[8])/pow(r[8],3));
 		vyi[8] = vy[8] - h*((G*M*y[8])/pow(r[8],3));
