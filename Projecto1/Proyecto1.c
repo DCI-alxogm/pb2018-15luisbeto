@@ -23,7 +23,7 @@ int main(){
 	r[i]=(pow(x[i],2)+pow(y[i],2),pow(z[i],2));
 	r[i]=sqrt(r[i]);
 
-	a[i];te[i]/h;
+	a[i];(te[i]/h)*350;
 	}
 	fclose(data);
 
