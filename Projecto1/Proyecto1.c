@@ -195,7 +195,7 @@ r=sqrt(pow(x0[5],2)+pow(y0[5],2)+pow(z0[5],2));
         vz0[5]=vz[5];
         x0[5]=x[5];
         vx0[5]=vx[5];
-            if (c%500==0)
+            if (c%600==0)
 {
 fprintf(sat,"%lf\t %lf\t %lf\t %lf\t %lf\t %lf\n",x[5],y[5],z[5],vx[5],vy[5],vz[5]);
 }
