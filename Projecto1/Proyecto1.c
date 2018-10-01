@@ -1,3 +1,4 @@
+/*programa para calcular las orbitas de los planetas entorno al sol*/
 #include<stdio.h>
 #include<math.h>
 
@@ -6,25 +7,22 @@ int main(){
     float h[9],G;
     double x[9], y[9], z[9], vx[9], vy[9], vz[9],x0[9], y0[9], z0[9], vx0[9], vy0[9], vz0[9],a[9],r;
 
-    FILE *data;
+    FILE *data;	 //se lee el archivo parametros.txt en el cual se encuentran los valores del programa 
     data=fopen("parametros.txt","r");   
     fscanf(data,"%d %f",&M,&G);
-//parametros de incremento
-    for(i=0;i<9;i++){
-    fscanf(data,"%lf %f",&a[i],&h[i]);   
-    fscanf(data,"%lf %lf %lf %lf %lf %lf",&x0[i],&y0[i],&z0[i],&vx0[i],&vy0[i],&vz0[i]);
-
-//variables de la velocidad
-
-    vx0[i] = vx0[i]*365.225;
-    vy0[i] = vy0[i]*365.225;
-    vz0[i] = vz0[i]*365.225;
+    for(i=0;i<9;i++){		//se abre un ciclo de 9 repeticiones para leer las variavles de los 9 planetas
+    fscanf(data,"%lf %f",&a[i],&h[i]);	//parametros de incremento  
+    fscanf(data,"%lf %lf %lf %lf %lf %lf",&x0[i],&y0[i],&z0[i],&vx0[i],&vy0[i],&vz0[i]);	//variables de la velocidad
+//se multiplican por 365 días para convertir las unidades a de días a años.
+    vx0[i] = vx0[i]*365;
+    vy0[i] = vy0[i]*365;
+    vz0[i] = vz0[i]*365;
+//se divide el tiempo de evulución correspondiente a cada planeta entre su incremento, para encontrar el numero de repeticiones.
     o[i]=a[i]/h[i];
 
     }
     fclose(data);
 
-G=4*(pow(3.1416,2));
     FILE *mer;
     mer=fopen("Mercurio.txt","w");
     c=0;
@@ -33,9 +31,9 @@ G=4*(pow(3.1416,2));
    
     r=sqrt(pow(x0[0],2)+pow(y0[0],2)+pow(z0[0],2));
 
-        x[0]=x0[0]+(vx0[0]*h[0]);//coordenada de x en un lapso de tiempo despues de h segundos
-        y[0]=y0[0]+(vy0[0]*h[0]);//coordenada de y en un lapso de tiempo despues de h segundos
-        z[0]=z0[0]+(vz0[0]*h[0]);//coordenada de z en un lapso de tiempo despues de h segundos
+        x[0]=x0[0]+(vx0[0]*h[0]);	//coordenada de x en un lapso de tiempo despues de h años
+        y[0]=y0[0]+(vy0[0]*h[0]);	//coordenada de y en un lapso de tiempo despues de h años
+        z[0]=z0[0]+(vz0[0]*h[0]);	//coordenada de z en un lapso de tiempo despues de h años
         vx[0]=vx0[0]-((h[0]*G*x0[0])/pow(r,3));
         vy[0]=vy0[0]-((h[0]*G*y0[0])/pow(r,3));
         vz[0]=vz0[0]-((h[0]*G*z0[0])/pow(r,3));
