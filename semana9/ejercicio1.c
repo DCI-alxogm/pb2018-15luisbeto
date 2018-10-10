@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 int main(){
 
@@ -26,7 +27,17 @@ int main(){
 	}
 
 	promedio=res/b;
-	printf("El promedio de los datos es: %f",promedio);
+	
+	res=0;
+	for(i=0;i<b;i++)
+	{
+		res=res+pow((*(prom+i)-promedio),2);
+	}
+
+	res=sqrt(res/(b-1));
+
+	printf("El promedio de los datos es: %f\n",promedio);
+	printf("La desviación estandandar es: %f\n",res);
 
 free(prom);
 return 0;
