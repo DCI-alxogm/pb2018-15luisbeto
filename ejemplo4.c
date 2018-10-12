@@ -1,15 +1,14 @@
 #include<stdio.h>
-
+float x2;
 float cuadrados();
-
 int main(){
-float x,x2;
-printf("introduce un numero\n");
-scanf("%f",&x);
-x2=cuadrados(x);
-printf("El cuadrado de %f es %f\n",x,x2);
+x2=cuadrados();
+printf("El cuadrado es %f\n",x2);
 return 0;
 }
-float cuadrados(float h){
-return (h*h);
+float cuadrados(){
+float x;
+printf("introduce un numero\n");
+scanf("%f",&x);
+return (x*x);
 }
