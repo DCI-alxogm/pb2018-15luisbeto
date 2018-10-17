@@ -1,0 +1,5 @@
+EL número 1 elevado a la potencia 2 es igual a 1 y la integral correspondiantes es: 0.000000
+EL número 2 elevado a la potencia 2 es igual a 4 y la integral correspondiantes es: 65689792.000000
+EL número 3 elevado a la potencia 2 es igual a 9 y la integral correspondiantes es: 197069344.000000
+EL número 4 elevado a la potencia 2 es igual a 16 y la integral correspondiantes es: 394138752.000000
+EL número 5 elevado a la potencia 2 es igual a 25 y la integral correspondiantes es: 656897984.000000
