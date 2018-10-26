@@ -2,8 +2,9 @@
 #include<math.h>
 #include<stdlib.h>
 int main(){
-	int n,b,i,j,N;
-	float l[4]; 
+	int n,b,i,j,N,q=0;
+	float l[4];
+	char nombre[20];
 	double e=.000000001,p=0;	
 	FILE *dat;
 	dat=fopen("datos.txt","r");
@@ -45,11 +46,10 @@ do{
 		Tf[i][j]=T[i][j];
 }
 }
-}while(p>e);
-
-
+	sprintf(nombre, "%d.-resultados.txt",q);
 	FILE *df;
-	df=fopen("resultados.txt","w");
+	df=fopen(nombre,"w");
+	df=fopen("Equilibrio.txt","w");
 	fprintf(df,"Las teperaturas son: \n");
 	for(j=n-2;j>0;j--){
 		for(i=1;i<n-1;i++){
@@ -58,5 +58,9 @@ do{
 		fprintf(df,"\n");
 	}
 fclose(df);
+q++;
+}while(p>e);
+
+printf("  %d\n",q);
 return 0;
 }
