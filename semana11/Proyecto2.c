@@ -2,15 +2,15 @@
 #include<math.h>
 #include<stdlib.h>
 int main(){
-	int n,b,i,j,N,q=0;
+	int n,i,j,N,q=0; //q es un contador
 	float l[4];
 	char nombre[20];
-	double e=.000000001,p=0;	
+	double e=0.00000001,p=0;	
 	FILE *dat;
 	dat=fopen("datos.txt","r");
-	fscanf(dat,"%d",&b);
-	N=b*b;
-	n=b+2;
+	fscanf(dat,"%d",&n);
+	N=n*n;
+	n=n+2;
 	float T[n][n], Tf[n][n];
 	for(int k=0;k<4;k++){
 	fscanf(dat,"%f",&l[k]);
@@ -32,7 +32,7 @@ int main(){
 			T[0][j]=l[0];
 			T[n-1][j]=l[2];
 }
-
+// un while para repetir 
 do{
 	for(j=1;j<n-1;j++){
 		for(i=1;i<n-1;i++){		
@@ -44,12 +44,16 @@ do{
 		p=sqrt(pow((T[i][j]-Tf[i][j])/T[i][j],2))*100;
 		}
 		Tf[i][j]=T[i][j];
-}
-}
-	sprintf(nombre, "%d.-resultados.txt",q);
+		}
+	}
+	sprintf(nombre, "%dresultados.txt",q);
 	FILE *df;
+	if(p>e){
 	df=fopen(nombre,"w");
+	}
+	else{
 	df=fopen("Equilibrio.txt","w");
+	}
 	fprintf(df,"Las teperaturas son: \n");
 	for(j=n-2;j>0;j--){
 		for(i=1;i<n-1;i++){
