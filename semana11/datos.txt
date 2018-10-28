@@ -1,4 +1,4 @@
-20	75	100	50	0
+3	75	100	50	0
 numero	T1	T2	T3	T4
 de
 puntos

@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
+
+void anbsoluto();
+
 int main(){
 	int n,i,j,N,q=0; //q es un contador
 	float l[4];
@@ -48,7 +51,7 @@ do{
 	}
 	sprintf(nombre, "%dresultados.txt",q);
 	FILE *df;
-	if(p>e){
+	if(p>e&&q%5==0){
 	df=fopen(nombre,"w");
 	}
 	else{
@@ -63,8 +66,12 @@ do{
 	}
 fclose(df);
 q++;
-}while(p>e);
+}while(p>e && q<100);
 
 printf("  %d\n",q);
 return 0;
 }
+
+void absoluto(){
+	double p=0;
+{
