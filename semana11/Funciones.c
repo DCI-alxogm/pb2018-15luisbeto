@@ -2,11 +2,6 @@
 #include<math.h>
 #include<stdlib.h>
 
-//valor absoluto
-float abso(float x, float y){
-	return (sqrt(pow(((x-y)/x),2))*100);
-}
-
 void cuerpo(int n, int i, int j, float e, float p, float tem, float tem1, float tem2, float tem3){
 	float T[n][n], Tf[n][n], VA;
 	char nombre[20];
@@ -30,7 +25,6 @@ void cuerpo(int n, int i, int j, float e, float p, float tem, float tem1, float 
 }
 // un do while para repetir el proceso hasta llegar a un equilibrio. 
 do{
-	p=0;
 	for(j=1;j<n-1;j++){
 		for(i=1;i<n-1;i++){		
 		
@@ -38,7 +32,8 @@ do{
 		// signación de valores
 		T[i][j]=(1.5*T[i][j])-(0.5*Tf[i][j]);
 		//valor absuluto
-		VA = abso(T[i][j],Tf[i][j]);
+		p=0;
+		VA = sqrt(pow(((T[i][j]-Tf[i][j])/T[i][j]),2))*100;
 		if(VA>p){
 		p=VA;
 		}
@@ -71,7 +66,7 @@ do{
 	}
 fclose(df);
 q++; 
-}while(p>e&& q<100);
+}while(p>e&& q<1000);
 
 printf("  %d\n",q);
 }
