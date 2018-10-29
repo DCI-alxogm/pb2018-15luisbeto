@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
-void inicio(int n);
 void result(float a, float b);
 float abso(float x, float y);
 int main(){
@@ -32,7 +31,12 @@ int main(){
 	fclose(dat);
 
 	// inicialización de llas matricez a cero
-	inicio(n);
+	for (int i=1;i<=n;i++){
+	for(int j=0;j<=n;j++){
+	T[i][j]=0;
+	Tf[i][j]=0;
+}
+}
 	
 	//asignación de las temperaturas de las orillas de la placa.
 	for(i=1;i<n-1;i++){
