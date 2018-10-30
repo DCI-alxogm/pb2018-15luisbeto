@@ -4,7 +4,7 @@ import numpy as np
 import sys
 
 ##Programa para graficar
-for i in range(1len(sys.argv)):
+for i in range(1,len(sys.argv)):
     file=sys.argv[i]
     plt.clf()
     data_img=np.loadtxt(file)
