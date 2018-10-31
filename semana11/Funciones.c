@@ -3,9 +3,10 @@
 #include<stdlib.h>
 
 void cuerpo(int n, double e, double p, float tem, float tem1, float tem2, float tem3){
-	double T[n][n], Tf[n][n], VA;
-	char nombre[20];
 	int q=0,c=1,i,j;
+
+	float T[300][300], Tf[300][300], VA;
+	char nombre[30];
 	// inicialización de llas matricez a cero
 	for (i=1;i<=n;i++){
 	for(j=0;j<=n;j++){
@@ -32,8 +33,10 @@ do{
 		// signación de valores
 		T[i][j]=(1.5*T[i][j])-(0.5*Tf[i][j]);
 		//valor absuluto
-
-		
+		p=0;
+		if(sqrt(pow((1.5*T[i][j]-0.5*Tf[i][j])/Tf[i][j],2))*100>p){
+		p=sqrt(pow((1.5*T[i][j]-0.5*Tf[i][j])/Tf[i][j],2))*100>p;
+}
 		// asignación de la variacón a p.
 
 		// asignación de la temperatura anteriór
@@ -46,20 +49,24 @@ do{
 	// archivo a crear	
 	FILE *df;
 	// si las temperaturas aun no ñlegan a su quilibro escribir en el archivo resultados cada 5 veces.
-	if(q%50==0){
+	if(q%20==0){
 	df=fopen(nombre,"w");
 	c++;
+	}
+	else{
+	df=fopen("Equilibrio.txt","w");
+	}
 	// Forma de imprimir los resultados
 	for(j=n-2;j>0;j--){
 		for(i=1;i<n-1;i++){
-			fprintf(df,"%lf\t",T[i][j]);
+			fprintf(df,"%f\t",T[i][j]);
 		}
 		fprintf(df,"\n");
 	}
 fclose(df);
-}
+
 q++; 
-}while(q<3000);
+}while(p>e && q<400);
 
 printf("  %d\n",q);
 }
