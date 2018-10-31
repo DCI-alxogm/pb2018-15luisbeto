@@ -1,1 +1,2 @@
 void printholamake();
+void multipli();
